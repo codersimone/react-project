@@ -1,13 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import TableWithEnglishWords from './components/Table/Table';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div>Привет, Мир!</div>
-        <p>Я Алиса</p>
-      </header>
+      <TableWithEnglishWords />
     </div>
   );
 }
