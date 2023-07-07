@@ -1,5 +1,5 @@
 import './App.css';
-import TableWithEnglishWords from './components/Table/Table';
+import TableWithEnglishWords from './components/Table';
 
 function App() {
   return (
