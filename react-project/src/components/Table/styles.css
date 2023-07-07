@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+td, th {
+    border: 1px solid rgb(139, 139, 139);
+    padding: 10px 20px;
+    background-color: rgba(215, 179, 242, 0.44);
+}
+
+th {
+    height: 1.5rem;
+    text-transform: uppercase;
+    border: 1.5px solid rgb(97, 96, 96);
+    background-color: rgba(199, 139, 245, 0.44);
+}
+
+.table-word-info {
+    height: 2rem;
+    text-align: center;
+}
+
+.table-container {
+    border-collapse: collapse;
+    border: 2px solid rgb(200,200,200);
+    letter-spacing: 0.7px;
+    font-size: 0.8rem;
+}
+
+/* @media screen and desktop (max-width: ) */
