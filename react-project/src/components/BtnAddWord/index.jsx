@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import './styles.css';
 import Popup from "./../Popup";
 
-function BtnAddWord() {
+const BtnAddWord = () => {
     const [isOpen, setIsOpen] = useState(false);
     const clickPopup = () => setIsOpen(!isOpen)
     return (
         <>
-            <button onClick={clickPopup}>Добавить слово</button>
+            <button onClick={clickPopup} className="btn-add-word">Добавить новое слово</button>
             {isOpen && <Popup clickPopup={clickPopup} />}
         </>
     )

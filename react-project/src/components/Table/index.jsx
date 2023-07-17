@@ -19,7 +19,7 @@ function TableWithEnglishWords() {
         }
     )
     return (
-        <>
+        <div className='container'>
             <table className='table-container'>
                 <thead className='table-column-headers'>
                     <tr key={WordView.id}>
@@ -35,7 +35,7 @@ function TableWithEnglishWords() {
                     {WordView}
                 </tbody>
             </table>
-        </>
+        </div>
     )
 }
 

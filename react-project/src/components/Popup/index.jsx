@@ -1,10 +1,13 @@
 import React from "react";
+import './styles.css';
 
-//нужно подключить стили (попап должен быть центрирован по центру экрана, все вокруг должно становиться темно-серым/получпрозрачным)
-function Popup({ clickPopup }) {
+//нужно подключить стили (попап должен быть центрирован по центру экрана, все вокруг должно становиться темно-серым/полупрозрачным)
+const Popup = ({ clickPopup }) => {
     return (
-        <div>
-            <div onClick={clickPopup}>X</div>
+        <div className="popup" >
+            <div className="popup__content" onClick={clickPopup}>
+                <img className="popup__close-icon" src="../img/icons/popup_close_icon.png" alt="Close picture" />
+            </div>
             {/** сюда внести новый компонент - верстка формы добавления нового слова */}
         </div>
     )
