@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.css';
 // import Words from './src/data/englishWords.json';
 import Words from '../../data/englishWords';
+import Button from '../Button';
 
 function TableWithEnglishWords() {
     const WordView = Words.map(
@@ -32,7 +33,12 @@ function TableWithEnglishWords() {
                     {WordView}
                 </tbody>
             </table>
-            <button></button>
+            <Button>
+                <img src="#" alt='Edit button' />
+            </Button>
+            <Button>
+                <img src="#" alt="Delite button" />
+            </Button>
         </>
     )
 }
