@@ -1,10 +1,12 @@
 import './App.css';
-import TableWithEnglishWords from './components/Table/Table';
+import TableWithEnglishWords from './components/Table';
+import BtnAddWord from './components/BtnAddWord';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <TableWithEnglishWords />
+      <BtnAddWord />
     </div>
   );
 }

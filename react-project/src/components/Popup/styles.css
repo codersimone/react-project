@@ -1,0 +1,32 @@
+.popup {
+    display: flex;
+    background-color: rgba(65, 65, 65, 0.9);
+    position: fixed;
+    inset: 0;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.popup__content {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.popup__close-icon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 35px;
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.popup__close-icon:hover {
+    width: 38px;
+}
