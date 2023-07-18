@@ -1,7 +1,11 @@
 .btn-component {
-    width: 90px;
-    height: 50px;
-    margin: 10px;
-    padding: 5px;
+    width: 15px;
+    height: 1px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-component:hover {
+    width: 30px;
 }

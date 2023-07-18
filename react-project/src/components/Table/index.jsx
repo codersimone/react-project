@@ -15,12 +15,12 @@ function TableWithEnglishWords() {
                     <td>{word.tag}</td>
                     <td>
                         <Button>
-                            <img src="" alt='Edit button' />
+                            <img src="../img/icons/btn_edit_icon-48.png" alt='Edit button' />
                         </Button>
                     </td>
                     <td>
                         <Button>
-                            <img src="#" alt="Delite button" />
+                            <img src="../img/icons/btn_delite_icon-48.png" alt="Delite button" />
                         </Button>
                     </td>
                 </tr>
