@@ -5,8 +5,8 @@ import './styles.css';
 const Popup = ({ clickPopup }) => {
     return (
         <div className="popup" >
-            <div className="popup__content" onClick={clickPopup}>
-                <img className="popup__close-icon" src="../img/icons/popup_close_icon.png" alt="Close picture" />
+            <div className="popup__content">
+                <img onClick={clickPopup} className="popup__close-icon" src="../img/icons/popup_close_icon.png" alt="Close picture" />
             </div>
             {/** сюда внести новый компонент - верстка формы добавления нового слова */}
         </div>

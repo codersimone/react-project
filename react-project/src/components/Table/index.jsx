@@ -13,8 +13,16 @@ function TableWithEnglishWords() {
                     <td>{word.transcription}</td>
                     <td>{word.translationRussian}</td>
                     <td>{word.tag}</td>
-                    <td>вставить Компонент кнопки "редактировать"</td>
-                    <td>вставить Компонент кнопки "удалить"</td>
+                    <td>
+                        <Button>
+                            <img src="" alt='Edit button' />
+                        </Button>
+                    </td>
+                    <td>
+                        <Button>
+                            <img src="#" alt="Delite button" />
+                        </Button>
+                    </td>
                 </tr>
             )
         }
@@ -38,12 +46,6 @@ function TableWithEnglishWords() {
                     </tbody>
                 </table>
             </div>
-            <Button>
-                <img src="#" alt='Edit button' />
-            </Button>
-            <Button>
-                <img src="#" alt="Delite button" />
-            </Button>
         </>
     )
 }
