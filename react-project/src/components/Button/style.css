@@ -1,0 +1,11 @@
+.btn-component {
+    width: 15px;
+    height: 1px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-component:hover {
+    width: 30px;
+}
