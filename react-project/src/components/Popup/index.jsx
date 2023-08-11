@@ -7,7 +7,7 @@ const Popup = ({ clickPopup }) => {
         <div className="popup" >
             <div className="popup__content">
                 <PopupForm />
-                <img onClick={clickPopup} className="popup__close-icon" src="../img/icons/popup_close_icon.png" alt="Close picture" />
+                <img onClick={clickPopup} className="popup__close-icon" src="../img/icons/popup_close_icon-48.png" alt="Close picture" />
             </div>
         </div>
     )

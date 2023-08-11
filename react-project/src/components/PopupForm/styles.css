@@ -22,9 +22,9 @@ input, select {
 }
 
 select {
-    /* appearance: none;
-    background: url(/react-project/public/img/icons/form_select_arrow_icon.png) no-repeat right;
-    background-position-x: calc(100% - 8px); */
+    appearance: none;
+    background: url(../../../public/img/icons/form_select_arrow_icon-48.png) no-repeat right;
+    background-position-x: calc(100% - 8px);
     cursor: pointer;
 }
 

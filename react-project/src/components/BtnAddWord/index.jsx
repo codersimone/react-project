@@ -4,7 +4,7 @@ import Popup from "./../Popup";
 
 const BtnAddWord = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const clickPopup = () => setIsOpen(!isOpen)
+    const clickPopup = () => setIsOpen(!isOpen);
     return (
         <>
             <button onClick={clickPopup} className="btn-add-word">Добавить новое слово</button>
