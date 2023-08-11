@@ -14,12 +14,12 @@ function TableWithEnglishWords() {
                     <td>{word.translationRussian}</td>
                     <td>{word.tag}</td>
                     <td>
-                        <Button>
+                        <Button type="change" wordList={Words} wordId={word.id}>
                             <img src="../img/icons/btn_edit_icon-48.png" alt='Edit button' />
                         </Button>
                     </td>
                     <td>
-                        <Button>
+                        <Button type="delete" wordList={Words} wordId={word.id}>
                             <img src="../img/icons/btn_delite_icon-48.png" alt="Delite button" />
                         </Button>
                     </td>
