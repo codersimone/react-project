@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { ContextApi } from "./context/context";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Table from "./components/Table/Table";
@@ -23,25 +24,27 @@ const App = () => {
   };
   const ChangeThemeStyle = classnames("app", tema);
   return (
-    <div className={ChangeThemeStyle}>
-      <Header tema={tema} toggleTema={toggleTema} clickPopup={clickPopup} />
-      <Routes>
-        <Route exact path="/" element={<Table />} />
-        <Route
-          exact
-          path="/game"
-          element={<Card clickPopup={handleClosePopup} />}
-        />
-        <Route
-          exact
-          path="/new"
-          element={<AddWord clickPopup={handleClosePopup} />}
-        />
-        <Route exact path="/" />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </div>
+    <ContextApi>
+      <div className={ChangeThemeStyle}>
+        <Header tema={tema} toggleTema={toggleTema} clickPopup={clickPopup} />
+        <Routes>
+          <Route exact path="/" element={<Table />} />
+          <Route
+            exact
+            path="/game"
+            element={<Card clickPopup={handleClosePopup} />}
+          />
+          <Route
+            exact
+            path="/new"
+            element={<AddWord clickPopup={handleClosePopup} />}
+          />
+          <Route exact path="/" />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </ContextApi>
   );
 };
 

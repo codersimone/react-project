@@ -8,10 +8,10 @@ function TableRow({word, handleSaveNewWord}) {
     const [edit, setEdit] = useState(false);
     const [editedWord, setEditedWord] = useState({
         id: word.id,
-        englishWord: word.englishWord,
+        english: word.english,
         transcription: word.transcription,
-        translationRussian: word.translationRussian,
-        tag: word.tag,
+        russian: word.russian,
+        tags_json: word.tags_json,
     });
     const handleEdit = () => {
         setEdit(true);
@@ -25,17 +25,17 @@ function TableRow({word, handleSaveNewWord}) {
         const value = (e.target.value);
         setEditedWord({
             ...editedWord,
-            [e.target.name] : value
+            [e.target.name]: value
         })
     }
             return (
                 <>
                     { edit ? 
                     (<tr key={word.id} className={styles.tableWordInfo}>
-                        <td><input name='englishWord' type='text' value={editedWord.englishWord} onChange={handleChange} /></td>
+                        <td><input name='englishWord' type='text' value={editedWord.english} onChange={handleChange} /></td>
                         <td><input name='transcription' type='text' value={editedWord.transcription} onChange={handleChange} /></td>
-                        <td><input name='translationRussian' type='text' value={editedWord.translationRussian} onChange={handleChange} /></td>
-                        <td><input name='tag' type='text' value={editedWord.tag} onChange={handleChange} /></td>
+                        <td><input name='translationRussian' type='text' value={editedWord.russian} onChange={handleChange} /></td>
+                        <td><input name='tag' type='text' value={editedWord.tags_json} onChange={handleChange} /></td>
                         <td><Btn className={styles.editDeliteIcon} type='change' wordList={Words} wordId={word.id}>
                             <img className={styles.editIcon} onClick={handleSave} src='../img/icons/form_select_arrow_icon.png' alt='Save button' />
                         </Btn></td>
@@ -44,10 +44,10 @@ function TableRow({word, handleSaveNewWord}) {
                         </Btn></td>
                     </tr>) : 
                     (<tr key={word.id} className={styles.tableWordInfo}> 
-                            <td>{editedWord.englishWord}</td>
+                            <td>{editedWord.english}</td>
                             <td>{editedWord.transcription}</td>
-                            <td>{editedWord.translationRussian}</td>
-                            <th>{editedWord.tag}</th>
+                            <td>{editedWord.russian}</td>
+                            <th>{editedWord.tags_json}</th>
                             <th>
                             <Btn className={styles.editDeliteIcon} type='change' wordList={Words} wordId={word.id}>
                                 <img className={styles.editIcon} onClick={handleEdit} src='../img/icons/btn_edit_icon-48.png' alt='Edit button' />
