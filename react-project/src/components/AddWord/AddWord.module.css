@@ -1,23 +1,23 @@
-.popup {
+.addWordPopup {
     display: flex;
-    background-color: rgba(65, 65, 65, 0.9);
+    background-color: #17252a;
     position: fixed;
     inset: 0;
     padding: 30px;
     overflow-y: auto;
 }
 
-.popup__content {
+.addWordPopupContent {
     width: 400px;
     height: 500px;
     margin: auto;
-    padding: 20px;
+    padding: 80px 20px 20px 20px;
     position: relative;
-    background-color: rgb(255, 255, 255);
+    background-color: #3aafa9;
     border-radius: 15px;
 }
 
-.popup__close-icon {
+.addWordPopupCloseIcon {
     position: absolute;
     top: 6px;
     right: 6px;
@@ -26,6 +26,6 @@
     cursor: pointer;
 }
 
-.popup__close-icon:hover {
+.addWordPopupCloseIcon:hover {
     width: 38px;
 }
