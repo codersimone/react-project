@@ -94,7 +94,7 @@ const englishWords = [
         "id": "14",
         "englishWord": "helicopter",
         "transcription": "[ˈhelɪkɒptə]",
-        "translationRussian": "вертолет",
+        "translationRussian": "вертолёт",
         "tag": "транспорт"
     },
     {

@@ -1,7 +1,7 @@
 import React from 'react';
-import './style.css';
+import styles from './Btn.module.css';
 
-const Button = (props) => {
+const Btn = (props) => {
     const { type, wordList, wordId } = props;
 
     const deleteWord = () => {
@@ -10,7 +10,7 @@ const Button = (props) => {
     }
 
     const changeWord = () => {
-
+        console.log(1);
     }
 
     const clickToDelete = () => deleteWord();
@@ -18,9 +18,10 @@ const Button = (props) => {
 
     return (
         <button
-            onClick={type === "delete" ? clickToDelete : clickToChange}
-            className='btn-component'>{props.children}</button>
+            onClick={type === 'delete' ? clickToDelete : clickToChange}
+            className={styles.btnComponent}>{props.children}
+        </button>
     )
 }
 
-export default Button;
+export default Btn;

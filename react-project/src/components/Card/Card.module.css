@@ -1,0 +1,68 @@
+.cardContainer {
+    display: flex;
+    background-color: #17252a;
+    position: fixed;
+    inset: 0;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.cardContent {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    padding: 80px 20px 20px 20px;
+    position: relative;
+    background-color: #3aafa9;
+    border-radius: 15px;
+}
+
+.cardCloseIcon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 35px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cardCloseIcon:hover {
+    width: 38px;
+}
+
+.cardPrevArrow {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 0 0 0 -17px;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.cardNextArrow {
+    float: right;
+    width: 80px;
+    height: 80px;
+    margin: 0 -17px 0 0;
+    cursor: pointer;
+}
+
+.btnShowTranslation {
+    width: 30%;
+    margin-top: 30px;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: #2B7A78;
+    box-shadow: 0 5px 0 #17252A;
+}
+
+.btnShowTranslation:hover {
+    background: #2B7A78;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
