@@ -13,14 +13,16 @@ function TableRow({word, handleSaveNewWord}) {
         russian: word.russian,
         tags_json: word.tags_json,
     });
+
     const handleEdit = () => {
         setEdit(true);
     }
+    
     const handleSave = () => {
         handleSaveNewWord(editedWord);
         setEdit(false);
     }
-
+    
     const handleChange = (e) => {
         const value = (e.target.value);
         setEditedWord({

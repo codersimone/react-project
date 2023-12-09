@@ -8,10 +8,10 @@ export const ContextApi = (props) => {
     .then((response) => response.json())
 
     .then((data) => {
-      console.log(data), setDictionary(data);
+      setDictionary(data);
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      console.log(err);
     });
 
   const addWord = (addNewWord) => {

@@ -5,11 +5,10 @@ import styles from './AddWordForm.module.css';
 const AddWordForm = (props) => {
     const {addWord} = useContext(Context);
     const [add, setAdd] = useState(props);
-    //сделать 4 инпута (по ключам) - DONE
-    //создать состояние для хранения значений полей - DONE
-    //создать функцию на подобие handleChange, чтобы передавать состояние в ф-ю addWord
+    
+    //создать функцию наподобие handleChange(), чтобы передавать состояние в addWord()
     const handleAdd = (e) => {
-        //читаем значение из инпута 
+        //читаем значение из инпута и записываем его в константу
         const value = (e.target.value);
         setAdd({
             ...add,
