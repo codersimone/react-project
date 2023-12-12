@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import Context from '../../context/context';
-// import Words from './src/data/englishWords.json';
 import Words from '../../data/englishWords';
 import TableRow from '../TableRow/TableRow'
 import styles from '../Table/Table.module.css';
