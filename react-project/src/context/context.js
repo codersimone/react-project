@@ -13,7 +13,7 @@ export const ContextApi = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [dictionary]);
+  }, []);
 
   const addWord = (addNewWord) => {
     fetch("http://itgirlschool.justmakeit.ru/api/words/add", {
@@ -59,9 +59,22 @@ export const ContextApi = (props) => {
       })
       .catch((err) => console.log(err));
   };
+
+  const editWord = (object) => {
+    fetch(`http://itgirlschool.justmakeit.ru/api/words/${object.id}/update`, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(object),
+    })
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+  };
   return (
     <Context.Provider
-      value={{ dictionary, setDictionary, addWord, deleteWord }}
+      value={{ dictionary, setDictionary, addWord, deleteWord, editWord }}
     >
       {props.children}
     </Context.Provider>

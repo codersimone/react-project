@@ -28,7 +28,7 @@ function Table() {
                         </tr>
                     </thead>
                     <tbody>
-                        {dictionary.map((word, index) => (<TableRow key={index} word={word} handleSaveNewWord={(newWord) => handleSave(index, newWord)} />))}
+                        {dictionary.map((word) => (<TableRow key={word.id} word={word} handleSaveNewWord={(newWord) => handleSave(word.id, newWord)} />))}
                     </tbody>
                 </table>
             </div>
