@@ -4,7 +4,8 @@ import styles from './Btn.module.css';
 
 const Btn = (props) => {
     const {deleteWord, editWord} = useContext(Context);
-    const { type, wordList, wordId } = props;
+    console.log(editWord);
+    const { type, wordList, wordId, editedWord } = props;
 
     // const deleteWord = () => {
     //     const wordIndex = wordList.findIndex((word) => word.id === wordId);
@@ -16,7 +17,13 @@ const Btn = (props) => {
     // }
 
     const clickToDelete = () => deleteWord(wordId);
-    const clickToChange = () => editWord(wordId);
+    const clickToChange = () => {
+        if (editedWord !== undefined) {
+            editWord(editedWord);
+        } else {
+            console.log('editedWord is undefined');
+        }
+    };
 
     return (
         <button

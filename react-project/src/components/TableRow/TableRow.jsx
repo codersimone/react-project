@@ -11,7 +11,7 @@ function TableRow({word, handleSaveNewWord}) {
         english: word.english,
         transcription: word.transcription,
         russian: word.russian,
-        tags_json: word.tags_json,
+        tags: word.tags,
     });
 
     const handleEdit = () => {
@@ -34,10 +34,10 @@ function TableRow({word, handleSaveNewWord}) {
                 <>
                     { edit ? 
                     (<tr key={word.id} className={styles.tableWordInfo}>
-                        <td><input name='englishWord' type='text' value={editedWord.english} onChange={handleChange} /></td>
+                        <td><input name='english' type='text' value={editedWord.english} onChange={handleChange} /></td>
                         <td><input name='transcription' type='text' value={editedWord.transcription} onChange={handleChange} /></td>
-                        <td><input name='translationRussian' type='text' value={editedWord.russian} onChange={handleChange} /></td>
-                        <td><input name='tag' type='text' value={editedWord.tags_json} onChange={handleChange} /></td>
+                        <td><input name='russian' type='text' value={editedWord.russian} onChange={handleChange} /></td>
+                        <td><input name='tags' type='text' value={editedWord.tags} onChange={handleChange} /></td>
                         <td><Btn className={styles.editDeliteIcon} type='change' wordList={Words} wordId={word.id}>
                             <img className={styles.editIcon} onClick={handleSave} src='../img/icons/form_select_arrow_icon.png' alt='Save button' />
                         </Btn></td>
@@ -49,7 +49,7 @@ function TableRow({word, handleSaveNewWord}) {
                             <td>{editedWord.english}</td>
                             <td>{editedWord.transcription}</td>
                             <td>{editedWord.russian}</td>
-                            <th>{editedWord.tags_json}</th>
+                            <th>{editedWord.tags}</th>
                             <th>
                             <Btn className={styles.editDeliteIcon} type='change' wordList={Words} wordId={word.id}>
                                 <img className={styles.editIcon} onClick={handleEdit} src='../img/icons/btn_edit_icon-48.png' alt='Edit button' />
