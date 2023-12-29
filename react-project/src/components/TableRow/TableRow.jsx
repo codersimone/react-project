@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import Words from '../../data/englishWords';
 import Btn from '../Btn/Btn';
+import {ReactComponent as EditIcon} from '../../assets/icons/edit_icon.svg';
+import {ReactComponent as CheckIcon} from '../../assets/icons/check_icon.svg';
+import {ReactComponent as DeleteIcon} from '../../assets/icons/delete_icon.svg';
 import styles from '../TableRow/TableRow.module.css';
 
 
@@ -38,28 +40,32 @@ function TableRow({word, handleSaveNewWord}) {
                         <td><input name='transcription' type='text' value={editedWord.transcription} onChange={handleChange} /></td>
                         <td><input name='russian' type='text' value={editedWord.russian} onChange={handleChange} /></td>
                         <td><input name='tags' type='text' value={editedWord.tags} onChange={handleChange} /></td>
-                        <td><Btn className={styles.editDeliteIcon} type='change' wordList={Words} wordId={word.id}>
-                            <img className={styles.editIcon} onClick={handleSave} src='../img/icons/form_select_arrow_icon.png' alt='Save button' />
-                        </Btn></td>
-                        <td><Btn className={styles.editDeliteIcon} type='delete' wordList={Words} wordId={word.id}>
-                            <img className={styles.deleteIcon} src='../img/icons/btn_delite_icon-48.png' alt='Delite button' />
-                        </Btn></td>
+                        <td>
+                            <Btn className={styles.editDeleteIcon} type='change' editedWord={editedWord} wordId={word.id}>
+                            <CheckIcon className={styles.editIcon} onClick={handleSave} alt='Save button' />
+                            </Btn>
+                        </td>
+                        <td>
+                            <Btn className={styles.editDeleteIcon} type='delete'  wordId={word.id}>
+                            <DeleteIcon className={styles.deleteIcon} alt='Delete button' />
+                            </Btn>
+                        </td>
                     </tr>) : 
                     (<tr key={word.id} className={styles.tableWordInfo}> 
-                            <td>{editedWord.english}</td>
-                            <td>{editedWord.transcription}</td>
-                            <td>{editedWord.russian}</td>
-                            <th>{editedWord.tags}</th>
-                            <th>
-                            <Btn className={styles.editDeliteIcon} type='change' wordList={Words} wordId={word.id}>
-                                <img className={styles.editIcon} onClick={handleEdit} src='../img/icons/btn_edit_icon-48.png' alt='Edit button' />
+                        <td>{editedWord.english}</td>
+                        <td>{editedWord.transcription}</td>
+                        <td>{editedWord.russian}</td>
+                        <td>{editedWord.tags}</td>
+                        <td>
+                            <Btn className={styles.editDeleteIcon} type='change' wordId={word.id}>
+                            <EditIcon className={styles.editIcon} onClick={handleEdit} alt='Edit button' />
                             </Btn>
-                            </th>
-                            <th>
-                            <Btn className={styles.editDeliteIcon} type='delete' wordList={Words} wordId={word.id}>
-                                <img className={styles.deleteIcon} src='../img/icons/btn_delite_icon-48.png' alt='Delite button' />
+                        </td>
+                        <td>
+                            <Btn className={styles.editDeleteIcon} type='delete' wordId={word.id}>
+                            <DeleteIcon className={styles.deleteIcon} alt='Delete button' />
                             </Btn>
-                            </th>
+                        </td>
                         
                     </tr>
                     )}

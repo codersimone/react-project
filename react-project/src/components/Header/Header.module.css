@@ -1,32 +1,98 @@
-.header {
+/* НОВЫЕ СТИЛИ */
+/* Navigation Menu Container */
+/* общий контейнер */
+.navMenu {
+    padding: 20px 0;
+    /* border-bottom: 2px solid var(--light-theme-accent-color); */
+    color: var(--light-theme-main-text-color);
+    background-color: var(--light-theme-main-bg-color);
+}
+/* контейнер с контентом */
+.headerContainer {
+    /* width: 80vw;
+    height: 10vh; */
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /* лого/текст и пункты меню по центру относительно друг друга */
+    align-items: center;
+    /* отступы между колонками/элементами */
+    column-gap: 10px;
+    /* в дальнейшем используется для адаптации под мобильные устройства/перестройки в несколько строк при уменьшении экрана */
+    row-gap: 20px;
+    /* для переноса при уменьшении экрана */
+    flex-wrap: wrap;
+}
+
+.headerLogoLink {
+    margin-right: 350px;
+    color: var(--light-theme-main-text-color);
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.headerLogoLink strong {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.headerMenuLinks {
+    padding-right: 30px;
+    column-gap: 10px;
+    color: var(--light-theme-main-text-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.headerMenuLinks:hover {
+    color: var(--light-theme-accent-color);
+}
+
+
+
+
+
+
+
+
+
+
+/* СТИЛИ ДО СТИЛЕЙ ВЫШЕ */
+/* .headerContainer {
     width: 100%;
-    padding: 20px 20px 20px 0px;
+    padding: 30px 20px 20px 0px;
     display: flex;
     justify-content: space-around;
-    text-transform: uppercase;
+    text-transform: uppercase; */
     /* крепление хедера при скролле */
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
     /* z-index: 5; */
-    background: #3aafa9;
-}
+    /* background: #3aafa9; */
+    /* border-bottom: 1px solid #2b7a78;
+} */
 
-.headerTitle {
+/* .headerTitle {
     padding-right: 70px;
-    /* color: #feffff; */
-    /* font-size: 40px; */
-    /* font-weight: normal; */
-}
+    color: #feffff;
+    font-weight: normal;
+} */
 
-.headerLinks {
+/* .headerLinks {
     position: relative;
     color: #feffff;
     font-size: large;
     font-weight: 600;
     text-decoration: none;
-}
+} */
 
-.headerLinks:hover {
+/* .headerLinks:hover {
     color: #def2f1;
-}
+} */
+

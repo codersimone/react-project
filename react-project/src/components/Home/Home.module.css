@@ -1,0 +1,32 @@
+/* общий контейнер */
+.mainPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: var(--light-theme-main-bg-color);
+}
+/* контейнер с контентом / заголовок h1 и компонент Table */
+.mainPageContent {
+    /* width: 90vw; */
+    
+    width: 1200px;
+    min-height: 760px;
+    margin: 0 auto;
+    padding: 30px 0 50px 30px;
+    background-color: var(--light-theme-accent-color);
+    border-radius: 20px 130px;
+}
+
+.mainTitle {
+    margin-bottom: 30px;
+    color: var(--light-theme-main-text-color);
+    font-size: 34px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.mainTitle strong {
+    font-weight: 800;
+    text-transform: uppercase;
+}

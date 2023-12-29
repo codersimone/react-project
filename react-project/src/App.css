@@ -1,38 +1,67 @@
 * {
     margin: 0;
     padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+*, 
+::before,
+::after {
     box-sizing: border-box;
+}
+
+:root {
+    --dark-gray: #17252a;
+    --gray-green: #222f33;
+    --dark-green: #27363B;
+    --deep-green: #2b7a78;
+    --bright-green: #3aafa9; 
+    --light-green: #def2f1;
+    --white-shade: #feffff;
+
+/* главная - светлая тема */
+    --light-theme-main-bg-color: var(--bright-green);
+    --light-theme-main-text-color: var(--white-shade);
+    --light-theme-accent-color: var(--deep-green);
+    --light-theme-table-borders-color: var(--dark-green);
+    --light-theme-hover-icons-color: var(--dark-gray);
+/* темная тема */
+    --dark-theme-main-bg-color: var(--gray-green);
+    --dark-theme-main-text-color: var(--light-green);
 }
 
 html, 
 body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
     height: 100%;
-    background-color: #3aafa9;
+    /* background-color: var(--maingreen); */
+    /* height: 10vh;
+    width: 100%;
+    z-index: 20; */
 }
 
-.app {
+
+
+/* СТИЛИ ДО СТИЛЕЙ ВЫШЕ */
+/* html, 
+body {
+    height: 100%;
+    background-color: #3aafa9;
+} */
+
+/* .app {
     min-height: 100%;
-    /* display: flex;
-    flex-direction: column; */
-
-    /* width: 100%; */
-    /* max-width: 1200px; */
-
     font-family: 'Raleway', sans-serif;
-    text-align: center;
-    /* color: rgb(0, 0, 0);
-    background-color: rgb(130, 0, 0); */
-
-    /* color: #fff;
-    background-color: #000; */
 }
 
 .app.light {
-    color: #feffff;
-    background-color: #3aafa9;
-}
+    color: var(--light-theme-main-text-color);
+    background-color: var(--light-theme-main-bg-color);
+} 
 
 .app.dark {
-    color: #def2f1;
-    background-color: #17252a;
-}
+    color: var(--dark-theme-main-text-color);
+    background-color: var(--dark-theme-main-bg-color);
+} */

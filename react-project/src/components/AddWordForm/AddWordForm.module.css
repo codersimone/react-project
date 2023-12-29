@@ -1,68 +1,105 @@
-/* .form {
+.formContainer {
+    width: 100%;
+    padding: 15px;
+}
+
+.formInput,
+.formBtnSubmit {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+.formFields {
+    position: relative;
+    margin-bottom: 44px;
+}
+
+.formLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: var(--light-theme-main-text-color);
+    /* время перехода анимации */
+    transition: 0.3s;
+}
+
+.formInput {
+    width: 100%;
+    padding: 5px 0 5px 0;
+    border: none;
+    border-bottom: 3px solid var(--light-theme-accent-color);
+    background-color: transparent;
+    outline: none;
+    /* время перехода анимации */
+    transition: 0.3s;
+}
+
+.formInput:focus {
+    border-bottom: 3px solid var(--light-theme-hover-icons-color);
+}
+
+/* кнопка Сохранить */
+.formBtnContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 350px;
-    height: 450px;
-    margin: 25px 0px 3px 5px;
-} */
-
-input {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 35px 0;
-    background: #feffff;
-    /* text-align: start; */
-    border: 2px solid #17252a;
 }
 
-.btnSave {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    width: 30%;
-    margin-top: 30px;
-    padding: 7px;
+.formBtnSubmit {
+    width: 50%;
+    padding: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--light-theme-main-text-color);
+    background-color: var(--light-theme-accent-color);
+    box-shadow: 0 10px 0 var(--light-theme-hover-icons-color);
     border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    background: #2B7A78;
-    box-shadow: 0 5px 0 #17252A;
-    /* font-size: medium;
-    padding: 17px;
-    margin: 3em 0em 1em 0em;
-    text-align: center;
-    border: 1px solid #17252a;
-    border-radius: 40px;
-    text-transform: uppercase;
+    border-radius: 20px 130px;
     cursor: pointer;
-    transition: all 0.3s; */
+    transition: all 0.3s;
 }
 
-.btnSave:hover {
-    background: #2B7A78;
+.formBtnSubmit:hover {
+    background-color: var(--light-theme-accent-color);
     box-shadow: none;
-    position: relative;
-    top: 5px;
 }
 
-/* .btnShowTranslation {
-    width: 30%;
-    margin-top: 30px;
-    padding: 7px;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
+.formInput:focus ~ .formLabel,
+.formInput:not(:placeholder-shown) ~ .formLabel {
+    top: -18px;
+    font-size: 14px;
+    color: var(--light-theme-main-text-color);
+}
+
+
+
+/* СТАРЫЕ СТИЛИ */
+/* .popupFormContainer input {
+    width: 100%;
+    padding: 10px;
+    margin: 3px 0 14px 0;
+    background-color: var(light-theme-main-text-color);
+    border: 2px solid var(--light-theme-hover-icons-color);
+}
+
+.btnSubmit {
+    width: 50%;
+    padding: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
     text-transform: uppercase;
-    color: white;
-    background: #2B7A78;
-    box-shadow: 0 5px 0 #17252A;
+    color: var(--light-theme-hover-icons-color);
+    background-color: var(--light-theme-accent-color);
+    box-shadow: 0 10px 0 var(--light-theme-hover-icons-color);
+    border: none;
+    border-radius: 20px 130px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.btnShowTranslation:hover {
-    background: #2B7A78;
+.btnSubmit:hover {
+    background-color: var(--light-theme-accent-color);
     box-shadow: none;
-    position: relative;
-    top: 5px;
 } */

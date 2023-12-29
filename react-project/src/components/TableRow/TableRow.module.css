@@ -1,19 +1,37 @@
-/* .tableWordInfo {
+/* инпуты редактирования слова */
+.tableWordInfo input {
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 30px;
-} */
-
-/* .tableWordInfo input {
-	padding: 1px;
-	font-size: 16px;
-	line-height: 10px;
-	border-top: 1px solid #2b7a78;
-} */
-
-.editDeliteIcon {
-	padding-right: 35px;
+	/* padding: 0 0 5px 0; */
+	margin: 0;
+    border: none;
+    background-color: transparent;
+    /* outline: none; */
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	color: var(--light-theme-hover-icons-color);
+	/* background: none; */
 }
 
+/* иконки */
+.editIcon {
+	width: 34px;
+	height: 34px;
+	stroke: var(--light-theme-main-text-color);
+	stroke-width: 1px;
+}
+
+.editIcon:hover {
+	stroke: var(--light-theme-hover-icons-color);
+}
+
+.deleteIcon {
+	width: 34px;
+	height: 34px;
+	stroke: var(--light-theme-main-text-color);
+	stroke-width: 1px;
+}
+
+.deleteIcon:hover {
+	stroke: var(--light-theme-hover-icons-color);
+}

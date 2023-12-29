@@ -1,4 +1,11 @@
 .btnComponent {
+    width: 100px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* СТИЛИ ДО ВЕРХНИХ, кнопки прыгали из-за увеличения ширины */
+/* .btnComponent {
     width: 15px;
     height: 1px;
     cursor: pointer;
@@ -8,4 +15,4 @@
 
 .btnComponent:hover {
     width: 30px;
-}
+} */

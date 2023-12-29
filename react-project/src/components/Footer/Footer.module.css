@@ -1,8 +1,11 @@
 .footer {
     width: 100%;
-    padding: 60px 0px 40px 0px;
+    padding: 40px 0px;
     display: flex;
     justify-content: center;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 200;
+    /* border-top: 2px solid var(--light-theme-accent-color); */
+    color: var(--light-theme-main-text-color);
+    background-color: var(--light-theme-main-bg-color);
 }

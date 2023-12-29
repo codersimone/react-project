@@ -1,10 +1,9 @@
-.cardContainer {
+.popupCardContainer {
     display: flex;
-    background-color: #17252a;
+    background-color: var(--light-theme-hover-icons-color);
     position: fixed;
     inset: 0;
     padding: 30px;
-    overflow-y: auto;
 }
 
 .cardContent {
@@ -13,7 +12,7 @@
     margin: auto;
     padding: 80px 20px 20px 20px;
     position: relative;
-    background-color: #3aafa9;
+    background-color: var(--light-theme-main-bg-color);
     border-radius: 15px;
 }
 
@@ -21,48 +20,107 @@
     position: absolute;
     top: 6px;
     right: 6px;
-    width: 35px;
-    background-color: transparent;
+    width: 38px;
+    height: 38px;
+    stroke: var(--light-theme-main-text-color);
+    stroke-width: 1px;
     cursor: pointer;
 }
 
 .cardCloseIcon:hover {
-    width: 38px;
+    stroke: var(--light-theme-hover-icons-color);
+}
+
+.wordInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--light-theme-main-text-color);
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.wordInfoTranslation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--light-theme-hover-icons-color);
+    font-size: 26px;
+    font-weight: 200;
+}
+
+.translationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+.btnShowTranslation {
+    width: 50%;
+    padding: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--light-theme-hover-icons-color);
+    background-color: var(--light-theme-accent-color);
+    box-shadow: 0 10px 0 var(--light-theme-hover-icons-color);
+    border: none;
+    border-radius: 20px 130px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btnShowTranslation:hover {
+    background-color: var(--light-theme-accent-color);
+    box-shadow: none;
+}
+
+.translationIsShown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 74px;
+    /* margin-top: 10px; */
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 20px 130px;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--light-theme-hover-icons-color);
 }
 
 .cardPrevArrow {
     float: left;
-    width: 80px;
-    height: 80px;
-    margin: 0 0 0 -17px;
+    width: 58px;
+    height: 58px;
+    stroke: var(--light-theme-main-text-color);
+    stroke-width: 1px;
     cursor: pointer;
     transform: rotate(180deg);
 }
 
+.cardPrevArrow:hover {
+    stroke: var(--light-theme-hover-icons-color);
+}
+
 .cardNextArrow {
     float: right;
-    width: 80px;
-    height: 80px;
-    margin: 0 -17px 0 0;
+    width: 58px;
+    height: 58px;
+    stroke: var(--light-theme-main-text-color);
+    stroke-width: 1px;
     cursor: pointer;
 }
 
-.btnShowTranslation {
-    width: 30%;
-    margin-top: 30px;
-    padding: 7px;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    background: #2B7A78;
-    box-shadow: 0 5px 0 #17252A;
-}
-
-.btnShowTranslation:hover {
-    background: #2B7A78;
-    box-shadow: none;
-    position: relative;
-    top: 5px;
+.cardNextArrow:hover {
+    stroke: var(--light-theme-hover-icons-color);
 }
