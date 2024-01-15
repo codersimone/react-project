@@ -1,33 +1,22 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, 
+/* html, 
 body {
     height: 100%;
     background-color: #3aafa9;
-}
-
-.app {
-    min-height: 100%;
-    /* display: flex;
-    flex-direction: column; */
-
-    /* width: 100%; */
-    /* max-width: 1200px; */
-
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    /* color: rgb(0, 0, 0);
-    background-color: rgb(130, 0, 0); */
-
-    /* color: #fff;
-    background-color: #000; */
-}
-
-.app.light {
+} */
+/* .app {
+    min-height: 100%; */
+/* display: flex;
+flex-direction: column; */
+/* width: 100%; */
+/* max-width: 1200px; */
+/* font-family: 'Raleway', sans-serif;
+text-align: center; */
+/* color: rgb(0, 0, 0);
+background-color: rgb(130, 0, 0); */
+/* color: #fff;
+background-color: #000; */
+/* } */
+/* .app.light {
     color: #feffff;
     background-color: #3aafa9;
 }
@@ -35,4 +24,4 @@ body {
 .app.dark {
     color: #def2f1;
     background-color: #17252a;
-}
+} *//*# sourceMappingURL=App.css.map */

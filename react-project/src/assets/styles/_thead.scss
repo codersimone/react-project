@@ -1,0 +1,10 @@
+.tableThead th {
+    width: 160px;
+    padding: 12px;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--lt-color-text);
+    border-top: 3px solid var(--lt-color-third-accent-hover);
+	border-bottom: 2px solid var(--lt-color-third-accent-hover);
+}

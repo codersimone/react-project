@@ -1,0 +1,127 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 160px;
+    height: 70px;
+    background-color: var(--lt-color-bg);
+    box-shadow: var(--box-shadow-first);
+    color: var(--lt-color-text);
+    font-family: var(--font-family-base);
+    z-index: 1;
+}
+
+.headerLogo {
+    // font-size: 20px;
+    // line-height: 1;
+    // font-weight: 700px;
+    // color: var(--lt-color-text);
+
+    padding-right: 30px;
+    color: var(--lt-color-text);
+    font-size: 26px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.headerLogo strong {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+//десктоп
+.headerNav {
+    margin-left: auto;
+}
+
+.headerNavList {
+    display: flex;
+    list-style-type: none;
+}
+
+.headerNavItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: var(--lt-color-text);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.headerNavItem:hover {
+        color: var(--lt-color-first-accent-menu);
+}
+
+// десктоп - кнопка скрыта
+.headerMenuBtn {
+    display: none;
+}
+
+// внешние отступы слева всем элементам меню, кроме первого
+.headerNavItem:nth-child(n + 2) {
+    margin-left: 60px;
+}
+
+// адаптация под планшеты
+
+// адаптация под мобильные устройства
+@media (max-width: 576px) {
+    .headerNav {
+        position: fixed;
+        top: 0;
+        left: -225px;
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        height: 100%;
+        background-color: var(--lt-color-bg);
+        border: 3px solid var(--lt-color-first-accent-menu);
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: var(--box-shadow-first);
+        transition: transform 0.3s linear;
+    }
+
+    .headerNav.active {
+        transform: translateX(100%);
+    }
+
+
+    .headerNavList {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        padding-left: 10px;
+    }
+
+    .headerNavItem {
+        margin: 20px 0;
+        font-weight: 500;
+        color: var(--lt-color-text);
+    }
+
+//убираю отступы всем элементам меню
+    .headerNavItem:nth-child(n + 2) {
+        margin-left: 0;
+    }
+
+// мобильные - кнопка показана
+    .headerMenuBtn {
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin-left: auto;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+    }
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;600&family=Raleway:wght@100;200;300;400;600;900&display=swap');
+
+:root {
+//глобальные переменные
+//палитра цветов
+    --dark-gray: #17252a;
+    --dark-gray-green: #222f33;
+    --dark-green: #27363b;
+    --deep-green: #2b7a78;
+    --bright-green: #3aafa9; 
+    --light-green: #def2f1;
+    --white-shade: #feffff;
+    --success: #7dbd6d;
+    --error: #a41b1b;
+
+/* светлая тема */
+// цвет фона
+    --lt-color-bg: var(--bright-green);
+// цвет шрифта
+    --lt-color-text: var(--white-shade);
+// пункты меню, акцент главной страницы и что еще ???
+    --lt-color-first-accent-menu: var(--deep-green);
+//границы заголовков таблицы и что еще ???
+    --lt-color-second-accent-table: var(--dark-green);
+//наведение на элементы и что еще ???
+    --lt-color-third-accent-hover: var(--dark-gray);
+//успех
+    --lt-color-success: var(--success);
+//ошибка
+    --lt-color-error: var(--error);
+
+/* темная тема */
+// цвет фона
+    --dt-color-bg: var(--gray-green);
+// цвет шрифта
+    --dt-color-text: var(--light-green);
+
+//палитра теней
+    --box-shadow-first: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+    --box-shadow-second: 12 12 2px 2px rgb(0 0 0 / 0.25);
+
+//параметры шрифта
+    --font-family-base: 'Raleway', sans-serif;
+    --font-size-base: 16px;
+
+//параментры контейнера, ограничивающего основную контентную часть 
+    --container-width: 1200px;
+    --container-padding-x: 15px;    
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family-base);
+    // height: 100vh;
+}
+

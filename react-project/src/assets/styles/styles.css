@@ -1,0 +1,408 @@
+@charset "UTF-8";
+/*
+Нормализация блочной модели
+для того, чтобы формула расчета 
+размеров элементов была удобнее
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;600&family=Raleway:wght@100;200;300;400;600;900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+Убираем внутренние отступы 
+слева (только тем элементам, 
+которым браузеры их добавляют) 
+тегам списков ul, ol,у которых 
+есть атрибут className 
+
+использование псевдокласса 
+:where позволит:
+1/ дублировать меньше кода в 
+селекторах 
+2/ добиться нулевой 
+спецефичности селекторов, что 
+позволит стилям нормализации 
+не мешать основным стилям 
+проекта 
+
+использование селектора по 
+атрибуту / [className] 
+позволит:
+стили сброса применятся только 
+к тем элементам, которые имеют 
+атрибут className
+*/
+:where(ul, ol):where([className]) {
+  padding-left: 0;
+}
+
+/*
+Убираем внешние отступы со всех 
+сторон тегам body, blockquote, 
+figure, у которых есть атрибут 
+className 
+*/
+body,
+:where(blockquote, figure):where([className]) {
+  margin: 0;
+}
+
+/*
+Убираем внешние вертикальные 
+отступы со всех сторон тегам 
+заголовков, параграфа, списков, 
+у которых есть атрибут 
+className 
+*/
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([className]) {
+  margin-block: 0;
+}
+
+/* 
+Убираем внешний отступ у редкого 
+тега описания определения dd, у 
+которого есть атрибут className 
+*/
+:where(dd[className]) {
+  margin-left: 0;
+}
+
+/*
+Убираем стандартный маркер 
+маркированного списка, у 
+которого есть атрибут className 
+*/
+:where(ul[className]) {
+  list-style: none;
+}
+
+/*
+Упрощаем работу с изображениями: 
+1/ display: block позволит 
+преобразовать тег img в блочный 
+элемент (по умолчанию 
+изображения являются строчными 
+элементами и, при просмотре в 
+DevTools, можно увидеть отступ в 
+несколько пикселей под 
+изображением) и убрать отступ
+2/ max-width: 100% позволит 
+предотвратить появление 
+горизонтального скролла, если на 
+экран вывелась очень большая 
+картинка
+*/
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+Наследуем свойства шрифта для 
+полей ввода от родительских 
+элементов
+*/
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/*
+Настраиванием тег html для всей 
+страницы:
+1/ height: 100% позволит прижать 
+футер книзу экрана
+2/ scroll-behavior: smooth 
+позволит сделать плавным скролл 
+при клике а якорные ссылки
+Это свойство не влияет на 
+стандартный скролл страницы 
+колесом мыши или на манипуляции 
+при помощи тачпада или тачскрина 
+мобильного устройства
+*/
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/*
+Настраиванием тег body:
+1/ min-height: 100% 
+также необходимо для работы логики 
+прижимания футера книзу экрана
+2/ line-height
+позволит унифицировать межстрочный 
+интервал для всего текста сайта до 
+значения 1.5 (по умолчанию это 
+значение 1.2, из-за чего некотрые 
+шрифты могут выглядеть слипшимися 
+*/
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+/*
+Используя синтаксис медиазапросов 
+@media, отключаем анимации и 
+переходы для людей у которых в 
+браузере выставленны 
+принудительные настройки для этого 
+*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --dark-gray: #17252a;
+  --dark-gray-green: #222f33;
+  --dark-green: #27363b;
+  --deep-green: #2b7a78;
+  --bright-green: #3aafa9;
+  --light-green: #def2f1;
+  --white-shade: #feffff;
+  --success: #7dbd6d;
+  --error: #a41b1b;
+  /* светлая тема */
+  --lt-color-bg: var(--bright-green);
+  --lt-color-text: var(--white-shade);
+  --lt-color-first-accent-menu: var(--deep-green);
+  --lt-color-second-accent-table: var(--dark-green);
+  --lt-color-third-accent-hover: var(--dark-gray);
+  --lt-color-success: var(--success);
+  --lt-color-error: var(--error);
+  /* темная тема */
+  --dt-color-bg: var(--gray-green);
+  --dt-color-text: var(--light-green);
+  --box-shadow-first: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  --box-shadow-second: 12 12 2px 2px rgb(0 0 0 / 0.25);
+  --font-family-base: "Raleway", sans-serif;
+  --font-size-base: 16px;
+  --container-width: 1200px;
+  --container-padding-x: 15px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-base);
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 160px;
+  height: 70px;
+  background-color: var(--lt-color-bg);
+  box-shadow: var(--box-shadow-first);
+  color: var(--lt-color-text);
+  font-family: var(--font-family-base);
+  z-index: 1;
+}
+
+.headerLogo {
+  padding-right: 30px;
+  color: var(--lt-color-text);
+  font-size: 26px;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.headerLogo strong {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.headerNav {
+  margin-left: auto;
+}
+
+.headerNavList {
+  display: flex;
+  list-style-type: none;
+}
+
+.headerNavItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--lt-color-text);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.headerNavItem:hover {
+  color: var(--lt-color-first-accent-menu);
+}
+
+.headerMenuBtn {
+  display: none;
+}
+
+.headerNavItem:nth-child(n+2) {
+  margin-left: 60px;
+}
+
+@media (max-width: 576px) {
+  .headerNav {
+    position: fixed;
+    top: 0;
+    left: -225px;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 100%;
+    background-color: var(--lt-color-bg);
+    border: 3px solid var(--lt-color-first-accent-menu);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: var(--box-shadow-first);
+    transition: transform 0.3s linear;
+  }
+  .headerNav.active {
+    transform: translateX(100%);
+  }
+  .headerNavList {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 10px;
+  }
+  .headerNavItem {
+    margin: 20px 0;
+    font-weight: 500;
+    color: var(--lt-color-text);
+  }
+  .headerNavItem:nth-child(n+2) {
+    margin-left: 0;
+  }
+  .headerMenuBtn {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+  }
+}
+.btn {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--lt-color-first-accent-menu);
+}
+
+/* общий контейнер */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 0 0 0;
+  background-color: var(--lt-color-bg);
+}
+
+/* контейнер с контентом - главный акцент станицы  */
+.mainAccent {
+  width: 1200px;
+  min-height: calc(80vh - 20px);
+  padding: 0 40px;
+  margin: 20px 0 170px 0;
+  background-color: var(--lt-color-first-accent-menu);
+  border-radius: 20px 130px;
+}
+
+.mainTitle {
+  margin: 28px 0 36px 10px;
+  color: var(--lt-color-text);
+  font-family: var(--font-family-base);
+  font-size: 34px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.mainTitle strong {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.table {
+  width: 100%;
+  letter-spacing: 2px;
+  border: none;
+  border-spacing: 10px;
+  background-color: transparent;
+}
+
+.tableThead th {
+  width: 160px;
+  padding: 12px;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--lt-color-text);
+  border-top: 3px solid var(--lt-color-third-accent-hover);
+  border-bottom: 2px solid var(--lt-color-third-accent-hover);
+}
+
+.tableTbody td {
+  padding: 10px;
+  font-weight: 500;
+  color: var(--lt-color-text);
+  border-bottom: 1px solid var(--lt-color-third-accent-hover);
+}
+
+td:nth-child(5),
+td:nth-child(6) {
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--lt-color-bg);
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--lt-color-text);
+}/*# sourceMappingURL=styles.css.map */

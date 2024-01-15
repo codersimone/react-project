@@ -1,0 +1,11 @@
+.tableTbody td {
+    padding: 10px;
+    font-weight: 500;
+    color: var(--lt-color-text);
+    border-bottom: 1px solid var(--lt-color-third-accent-hover);
+}
+
+td:nth-child(5),
+td:nth-child(6) {
+    text-align: center;
+}
