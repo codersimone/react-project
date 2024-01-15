@@ -400,9 +400,10 @@ td:nth-child(6) {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--lt-color-bg);
   font-family: var(--font-family-base);
   font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 1px;
   color: var(--lt-color-text);
+  background-color: var(--lt-color-bg);
 }/*# sourceMappingURL=styles.css.map */
