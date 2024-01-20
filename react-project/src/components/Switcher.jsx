@@ -3,7 +3,9 @@ import {ReactComponent as SwitchIcon} from '../assets/icons/sun_moon_light_dark_
 
 const Switcher = () => {
     return (
-        <SwitchIcon className='btn' />
+        <div>
+            <SwitchIcon />
+        </div>
     );
 };
 

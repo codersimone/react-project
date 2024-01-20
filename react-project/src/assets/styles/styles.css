@@ -197,17 +197,12 @@ body {
   --box-shadow-second: 12 12 2px 2px rgb(0 0 0 / 0.25);
   --font-family-base: "Raleway", sans-serif;
   --font-size-base: 16px;
-  --container-width: 1200px;
-  --container-padding-x: 15px;
-}
-
-html,
-body {
-  height: 100%;
 }
 
 body {
   font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  background-color: var(--lt-color-bg);
 }
 
 .header {
@@ -217,7 +212,7 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 160px;
+  padding: 0 120px;
   height: 70px;
   background-color: var(--lt-color-bg);
   box-shadow: var(--box-shadow-first);
@@ -227,6 +222,10 @@ body {
 }
 
 .headerLogo {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700px;
+  color: var(--lt-color-text);
   padding-right: 30px;
   color: var(--lt-color-text);
   font-size: 26px;
@@ -274,58 +273,9 @@ body {
   margin-left: 60px;
 }
 
-@media (max-width: 576px) {
-  .headerNav {
-    position: fixed;
-    top: 0;
-    left: -225px;
-    display: flex;
-    flex-direction: column;
-    width: 220px;
-    height: 100%;
-    background-color: var(--lt-color-bg);
-    border: 3px solid var(--lt-color-first-accent-menu);
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
-    box-shadow: var(--box-shadow-first);
-    transition: transform 0.3s linear;
-  }
-  .headerNav.active {
-    transform: translateX(100%);
-  }
-  .headerNavList {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding-top: 40px;
-    padding-left: 10px;
-  }
-  .headerNavItem {
-    margin: 20px 0;
-    font-weight: 500;
-    color: var(--lt-color-text);
-  }
-  .headerNavItem:nth-child(n+2) {
-    margin-left: 0;
-  }
-  .headerMenuBtn {
-    display: block;
-    width: 24px;
-    height: 24px;
-    margin-left: auto;
-    padding: 0;
-    background-color: transparent;
-    border: 0;
-  }
-}
 .btn {
   width: 50px;
   height: 50px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  color: var(--lt-color-first-accent-menu);
 }
 
 /* общий контейнер */
@@ -363,6 +313,7 @@ body {
 
 .table {
   width: 100%;
+  margin-bottom: 60px;
   letter-spacing: 2px;
   border: none;
   border-spacing: 10px;
@@ -390,6 +341,19 @@ body {
 td:nth-child(5),
 td:nth-child(6) {
   text-align: center;
+}
+
+/* иконки */
+.editIcon,
+.deleteIcon {
+  stroke: var(--lt-color-text);
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.editIcon:hover,
+.deleteIcon:hover {
+  stroke: var(--lt-color-third-accent-hover);
 }
 
 .footer {

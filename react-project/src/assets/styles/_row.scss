@@ -4,3 +4,18 @@
 //display: flex;
 //     justify-content: center;
 // }
+
+
+
+/* иконки */
+.editIcon, 
+.deleteIcon {
+    stroke: var(--lt-color-text);
+	stroke-width: 1px;
+    cursor: pointer;
+}
+
+.editIcon:hover,
+.deleteIcon:hover {
+    stroke: var(--lt-color-third-accent-hover);
+}

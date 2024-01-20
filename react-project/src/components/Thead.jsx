@@ -2,7 +2,6 @@ import React from 'react';
 
 const Thead = () => {
     return (
-        <>
             <thead className='tableThead'>
                 <tr>
                     <th>english</th>
@@ -13,7 +12,6 @@ const Thead = () => {
                     <th>delete</th>
                 </tr>
             </thead>
-        </>
         
     );
 }

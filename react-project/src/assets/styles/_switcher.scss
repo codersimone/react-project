@@ -1,27 +1,25 @@
-// .btn {
-    //локальные переменные
-    // --btnBorderColor: transparent;
-
-//     display: inline-flex;
-//     align-items: center;
-//     column-gap: 0.5em;
-//     background-color: red;
-//     border: none;
-//     width: 40px;
-// }
-
 .btn {
+    width: 50px;
+    height: 50px;
+    // cursor: pointer;
+}
+
+
+
+
+//ПОСЛЕДНИЕ 
+// .btn {
     // не работают
     // display: flex;
     // justify-content: center;
     // align-items: center;
     // работают
-    width: 50px;
-    height: 50px;
+    // width: 50px;
+    // height: 50px;
     // border: none;
-    cursor: pointer;
-}
+//     cursor: pointer;
+// }
 
-.btn:hover {
-    color: var(--lt-color-first-accent-menu);
-}
+// .btn:hover {
+//     color: var(--lt-color-first-accent-menu);
+// }

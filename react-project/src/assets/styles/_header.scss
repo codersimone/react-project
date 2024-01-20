@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 160px;
+    padding: 0 120px;
     height: 70px;
     background-color: var(--lt-color-bg);
     box-shadow: var(--box-shadow-first);
@@ -15,10 +15,10 @@
 }
 
 .headerLogo {
-    // font-size: 20px;
-    // line-height: 1;
-    // font-weight: 700px;
-    // color: var(--lt-color-text);
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 700px;
+    color: var(--lt-color-text);
 
     padding-right: 30px;
     color: var(--lt-color-text);
@@ -73,55 +73,55 @@
 // адаптация под планшеты
 
 // адаптация под мобильные устройства
-@media (max-width: 576px) {
-    .headerNav {
-        position: fixed;
-        top: 0;
-        left: -225px;
-        display: flex;
-        flex-direction: column;
-        width: 220px;
-        height: 100%;
-        background-color: var(--lt-color-bg);
-        border: 3px solid var(--lt-color-first-accent-menu);
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
-        box-shadow: var(--box-shadow-first);
-        transition: transform 0.3s linear;
-    }
+// @media (max-width: 576px) {
+//     .headerNav {
+//         position: fixed;
+//         top: 0;
+//         left: -65%;
+//         display: flex;
+//         flex-direction: column;
+//         width: 60%;
+//         height: 100%;
+//         background-color: var(--lt-color-bg);
+//         border: 3px solid var(--lt-color-first-accent-menu);
+//         border-top-right-radius: 16px;
+//         border-bottom-right-radius: 16px;
+//         box-shadow: var(--box-shadow-first);
+//         transition: transform 0.3s linear;
+//     }
 
-    .headerNav.active {
-        transform: translateX(100%);
-    }
+//     .headerNav.active {
+//         transform: translateX(100%);
+//     }
 
 
-    .headerNavList {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding-top: 40px;
-        padding-left: 10px;
-    }
+//     .headerNavList {
+//         flex: 1;
+//         display: flex;
+//         flex-direction: column;
+//         padding-top: 40px;
+//         padding-left: 10px;
+//     }
 
-    .headerNavItem {
-        margin: 20px 0;
-        font-weight: 500;
-        color: var(--lt-color-text);
-    }
+//     .headerNavItem {
+//         margin: 20px 0;
+//         font-weight: 500;
+//         color: var(--lt-color-text);
+//     }
 
 //убираю отступы всем элементам меню
-    .headerNavItem:nth-child(n + 2) {
-        margin-left: 0;
-    }
+    // .headerNavItem:nth-child(n + 2) {
+    //     margin-left: 0;
+    // }
 
 // мобильные - кнопка показана
-    .headerMenuBtn {
-        display: block;
-        width: 24px;
-        height: 24px;
-        margin-left: auto;
-        padding: 0;
-        background-color: transparent;
-        border: 0;
-    }
-}
+//     .headerMenuBtn {
+//         display: block;
+//         width: 24px;
+//         height: 24px;
+//         margin-left: auto;
+//         padding: 0;
+//         background-color: transparent;
+//         border: 0;
+//     }
+// }

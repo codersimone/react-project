@@ -1,7 +1,4 @@
-
-
-
-// import React from 'react';
+import React from 'react';
 // import styles from './Btn.module.css';
 
 // const Btn = (props) => {

@@ -1,6 +1,8 @@
 import React from 'react';
+import { observer, inject } from 'mobx-react';
 import Thead from './Thead';
 import Tbody from './Tbody';
+
 
 const Table = () => {
     return (
@@ -11,7 +13,7 @@ const Table = () => {
     );
 }
 
-export default Table;
+export default inject(['wordStore'])(observer(Table));
 
 
 // import React, { useState } from 'react';
