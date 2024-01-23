@@ -48,8 +48,6 @@ const Row = ({ wordStore, word, isLoaded }) => {
         setWordFromApi({...wordFromApi, [event.target.name]: event.target.value});
     }
 
-
-
     return (
 // условный рендеринг
     <> 
