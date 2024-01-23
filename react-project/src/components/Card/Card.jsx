@@ -1,8 +1,47 @@
 import React from 'react';
+// import {ReactComponent as CloseIcon} from '../../assets/icons/close_icon.svg';
+// import {ReactComponent as ArrowIcon} from '../../assets/icons/arrow_right_circle_icon.svg';
 
 const Card = () => {
     return (
         <>cards</>
+        // <div className='popupCardContainer'>
+        //     <div className='cardContent'>
+        //         <CloseIcon className='cardCloseIcon' alt='Close picture' />
+        //         <div>
+        //             <div className='wordInfo'>англ.</div>
+        //             <div className='wordInfoTranslation'>транс.</div>
+        //             <div className='wordInfo'>тег</div>
+        //         </div>
+        //         <div className='translationContainer'>
+        //             {/* {pressedBtn ? <div className='translationIsShown'>{word.russian}</div> : <button className='btnShowTranslation' onClick={showTranslation}>show<br />translation</button>} */}
+        //         </div>
+        //         <ArrowIcon className='cardPrevArrow' alt='Left arrow' />
+        //         {/* <ArrowIcon className='cardNextArrow' alt='Right arrow' /> */}
+        //     </div>
+        // </div>
+
+
+
+
+
+
+
+        // <div className='cardContainer'>
+        //     <div className='cardContent'>
+        //         <img className='cardCloseIcon' src='../img/icons/popup_close_icon-48.png' alt='Close picture' />
+        //         <div>
+        //             <div>вывод англ. слова</div>
+        //             <div>вывод транскрипции</div>
+        //             <div>вывод тега</div>
+        //         </div>
+        //         {/* <div>
+        //             {pressedBtn ? <div className={styles.btnShowTranslation}>{word.translationRussian}</div> : <button className={styles.btnShowTranslation} onClick={showTranslation}>Перевод</button>}
+        //         </div> */}
+        //         <img className='cardPrevArrow' src='../img/icons/baseline_arrow_right_alt_white_24dp.png' />
+        //         <img className='cardNextArrow' src='../img/icons/baseline_arrow_right_alt_white_24dp.png' />
+        //     </div>
+        // </div>
     );
 }
 

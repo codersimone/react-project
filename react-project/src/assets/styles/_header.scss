@@ -19,11 +19,11 @@
     line-height: 1;
     font-weight: 700px;
     color: var(--lt-color-text);
-
     padding-right: 30px;
-    color: var(--lt-color-text);
     font-size: 26px;
     font-weight: 100;
+    color: var(--lt-color-text);
+    text-decoration: none;
     letter-spacing: 1.5px;
     cursor: pointer;
 }
@@ -52,6 +52,7 @@
     line-height: 1;
     letter-spacing: 1px;
     color: var(--lt-color-text);
+    text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
 }

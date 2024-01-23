@@ -6,16 +6,19 @@
 // }
 
 
-
 /* иконки */
 .editIcon, 
-.deleteIcon {
+.deleteIcon,
+.saveIcon,
+.cancelIcon {
     stroke: var(--lt-color-text);
 	stroke-width: 1px;
     cursor: pointer;
 }
 
 .editIcon:hover,
-.deleteIcon:hover {
+.deleteIcon:hover,
+.saveIcon:hover,
+.cancelIcon:hover {
     stroke: var(--lt-color-third-accent-hover);
 }

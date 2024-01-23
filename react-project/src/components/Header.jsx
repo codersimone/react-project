@@ -1,23 +1,25 @@
 import React, {useState} from 'react';
-import {ReactComponent as MenuIcon} from '../assets/icons/burger_menu_navigation_icon.svg';
-import Switcher from './Switcher';
+import { NavLink } from 'react-router-dom';
+// import {ReactComponent as MenuIcon} from '../assets/icons/burger_menu_navigation_icon.svg';
+import { ReactComponent as SwitchIcon } from '../assets/icons/edit_icon.svg';
 // import Card from '../Card/Card';
 // import Add from '../AddWord/AddWord';
 
 const Header = () => {
-    const [isOpen, setOpen] = useState();
+    const [isOpen, setIsOpen] = useState();
     return (
         <header className='header'>
-            <p className='headerLogo'><strong>english words</strong> by cards</p>
+            <NavLink className='headerLogo' to='/'><p><strong>english words</strong> by cards</p></NavLink>
             <nav className={`headerNav ${isOpen ? 'active' : ''}`}>
-                <ul className='headerNavList'>
-                    <li className='headerNavItem'>home page</li>
-                    <li className='headerNavItem'>card game</li>
-                    <li className='headerNavItem'>add word</li>
-                    <li className='headerNavItem'><Switcher /></li>
-                </ul>
+                <div className='headerNavList'>
+                    <NavLink className='headerNavItem' to='/game'>card game</NavLink>
+                    <NavLink className='headerNavItem' to='/new'>add word</NavLink>
+                    <NavLink className='headerNavItem' to='/' > <SwitchIcon /> </NavLink>
+                </div>
             </nav>
-            <button className='headerMenuBtn' onClick={() => setOpen(!isOpen)}><MenuIcon /></button>
+
+            {/* иконка бургер-меню для мобильной версии */}
+            {/* <button className='headerMenuBtn' onClick={() => setOpen(!isOpen)}><MenuIcon /></button> */}
         </header>
 
 

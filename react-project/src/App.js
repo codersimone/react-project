@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
 import { inject, observer } from 'mobx-react';
+import { Route, Routes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
+import Card from './components/Card/Card';
+import AddWord from './components/AddWord/AddWord';
+// import { ReactComponent as SwitchIcon } from './assets/icons/sun_moon_light_dark_icon.svg';
+import { ReactComponent as SwitchIcon } from './assets/icons/edit_icon.svg';
 import Footer from './components/Footer';
 import './assets/styles/styles.scss';
 
@@ -12,11 +18,34 @@ const App = ({ wordStore }) => {
     }, []);
     return (
         <>
-            <Header />
-            <Home />
-            <Footer />
+            <div>
+                {/* <SwitchIcon /> */}
+                <Header />
+                <Routes>
+                    <Route exact path='/' element={<Home />} />
+                    <Route exact path='/game' element={<Card />} />
+                    <Route exact path='/new' element={<AddWord />} />
+                    <Route exact path='/' element={<SwitchIcon />} />
+                    <Route exact path='/' />
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
+                <Footer />
+            </div>
         </>
     );
+
+    function NotFound() {
+        const navigate = useNavigate();
+        function callBack() {
+            navigate('/');
+        }
+        return (
+            <>
+                <h2>Страница не найдена</h2>
+                <button onClick={callBack}>Вернуться на главную станицу</button>
+            </>
+        );
+    }
 };
 
 export default inject(['wordStore'])(observer(App));

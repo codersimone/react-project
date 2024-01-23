@@ -227,9 +227,10 @@ body {
   font-weight: 700px;
   color: var(--lt-color-text);
   padding-right: 30px;
-  color: var(--lt-color-text);
   font-size: 26px;
   font-weight: 100;
+  color: var(--lt-color-text);
+  text-decoration: none;
   letter-spacing: 1.5px;
   cursor: pointer;
 }
@@ -257,6 +258,7 @@ body {
   line-height: 1;
   letter-spacing: 1px;
   color: var(--lt-color-text);
+  text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -271,11 +273,6 @@ body {
 
 .headerNavItem:nth-child(n+2) {
   margin-left: 60px;
-}
-
-.btn {
-  width: 50px;
-  height: 50px;
 }
 
 /* общий контейнер */
@@ -320,6 +317,13 @@ body {
   background-color: transparent;
 }
 
+/* .editIcon {
+    height: 34px;
+}
+
+.deleteIcon {
+    height: 34px;
+} */
 .tableThead th {
   width: 160px;
   padding: 12px;
@@ -345,14 +349,18 @@ td:nth-child(6) {
 
 /* иконки */
 .editIcon,
-.deleteIcon {
+.deleteIcon,
+.saveIcon,
+.cancelIcon {
   stroke: var(--lt-color-text);
   stroke-width: 1px;
   cursor: pointer;
 }
 
 .editIcon:hover,
-.deleteIcon:hover {
+.deleteIcon:hover,
+.saveIcon:hover,
+.cancelIcon:hover {
   stroke: var(--lt-color-third-accent-hover);
 }
 
