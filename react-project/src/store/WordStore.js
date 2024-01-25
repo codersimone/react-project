@@ -42,6 +42,7 @@ export default class WordStore {
                 this.isLoading = false;
                 this.isLoaded = true;
             });
+            console.error('Error:', error);
         }
     };
 
@@ -57,7 +58,7 @@ export default class WordStore {
                 }
             );
             if (!responseToDelete.ok) {
-                throw new Error('Error: fetch request failed');
+                throw new Error('Error: Network response was not ok');
             }
 
             runInAction(() => {
@@ -70,11 +71,12 @@ export default class WordStore {
                 this.error = error;
                 this.isLoading = false;
             });
+            console.error('Error:', error);
         }
     };
 
     // функция редактирования слова
-    editWord = async (id, object) => {
+    editWord = async (object) => {
         this.isLoading = true;
 
         try {
@@ -82,13 +84,27 @@ export default class WordStore {
                 `http://itgirlschool.justmakeit.ru/api/words/${object.id}/update`,
                 {
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(object),
                 }
             );
             if (!responseToEdit.ok) {
-                throw new Error('Error: fetch request failed');
+                throw new Error('Error: Network response was not ok');
             }
 
             runInAction(() => {
+                // ищем индекс слова в массиве, у которого id совпадает с id объекта. Функция findIndex возвращает индекс первого элемента в массиве, который подходит условию. Если элемент не найден, возвращает -1.
+                const index = this.words.findIndex(
+                    (word) => word.id === object.id
+                );
+                // если findIndex вернул -1 - значит элемент с таким id не найден. А если не равен, то найден
+                if (index !== -1) {
+                    // обновляем массив
+                    this.words[index] = { ...this.words[index], ...object };
+                }
+                // вызов функции loadData для обновления состояния после асинхронной операции
                 this.loadData();
                 this.isLoading = false;
             });
@@ -97,6 +113,7 @@ export default class WordStore {
                 this.error = error;
                 this.isLoading = false;
             });
+            console.error('Error:', error);
         }
     };
 

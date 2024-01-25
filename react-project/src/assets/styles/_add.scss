@@ -1,0 +1,112 @@
+// общий контейнер / темный фон
+.popupAddContainer {
+    display: flex;
+    background-color: var(--lt-color-third-accent-hover);
+    position: fixed;
+    inset: 0;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+// карточка попапа
+.addContent {
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    padding: 70px 20px 20px 20px;
+    position: relative;
+    background-color: var(--lt-color-bg);
+    border-radius: 15px;
+}
+
+// иконка Закрыть/Крестик
+.addCloseIcon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 38px;
+    height: 38px;
+    stroke: var(--lt-color-text);
+    stroke-width: 1px;
+    cursor: pointer;
+}
+
+.addCloseIcon:hover {
+    stroke: var(--lt-color-third-accent-hover);
+}
+
+
+// форма
+.addFormContainer {
+    width: 100%;
+    padding: 15px;
+}
+
+.addFormInput,
+.addFormBtnSubmit {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+.addFormFields {
+    position: relative;
+    margin-bottom: 44px;
+}
+
+.addFormLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: var(--lt-color-text);
+    // время перехода анимации
+    transition: 0.3s;
+}
+
+.addFormInput {
+    width: 100%;
+    padding: 5px 0 5px 0;
+    border: none;
+    border-bottom: 3px solid var(--lt-color-first-accent-menu);
+    background-color: transparent;
+    outline: none;
+    // время перехода анимации
+    transition: 0.3s;
+}
+
+.addFormInput:focus {
+    border-bottom: 3px solid var(--lt-color-third-accent-hover);
+}
+
+// кнопка Сохранить
+.addFormBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addFormBtnSubmit {
+    width: 50%;
+    padding: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--lt-color-text);
+    background-color: var(--lt-color-first-accent-menu);
+    box-shadow: 0 10px 0 var(--lt-color-third-accent-hover);
+    border: none;
+    border-radius: 20px 130px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.addFormBtnSubmit:hover {
+    background-color: var(--lt-color-first-accent-menu);
+    box-shadow: none;
+}
+
+.addFormInput:focus ~ .formLabel,
+.addFormInput:not(:placeholder-shown) ~ .addFormLabel {
+    top: -18px;
+    font-size: 14px;
+    color: var(--lt-color-text);
+}

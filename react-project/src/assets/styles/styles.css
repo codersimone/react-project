@@ -347,21 +347,269 @@ td:nth-child(6) {
   text-align: center;
 }
 
-/* иконки */
+/* иконки Редактировать/Карандаш и Удалить/Мусорный бак */
 .editIcon,
-.deleteIcon,
-.saveIcon,
-.cancelIcon {
+.deleteIcon {
   stroke: var(--lt-color-text);
   stroke-width: 1px;
   cursor: pointer;
 }
 
 .editIcon:hover,
-.deleteIcon:hover,
-.saveIcon:hover,
-.cancelIcon:hover {
+.deleteIcon:hover {
   stroke: var(--lt-color-third-accent-hover);
+}
+
+/* кнопки Сохранить/Save и Отменить изменения/Cancel */
+.cancelBtn,
+.saveBtn {
+  color: var(--lt-color-text);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cancelBtn:hover,
+.saveBtn:hover {
+  color: var(--lt-color-third-accent-hover);
+}
+
+.popupCardContainer {
+  display: flex;
+  background-color: var(--lt-color-third-accent-hover);
+  position: fixed;
+  inset: 0;
+  padding: 30px;
+}
+
+.cardContent {
+  width: 400px;
+  height: 500px;
+  margin: auto;
+  padding: 80px 20px 20px 20px;
+  position: relative;
+  background-color: var(--lt-color-bg);
+  border-radius: 15px;
+}
+
+.cardCloseIcon {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 38px;
+  height: 38px;
+  stroke: var(--lt-color-text);
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.cardCloseIcon:hover {
+  stroke: var(--lt-color-third-accent-hover);
+}
+
+.wordInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--lt-color-text);
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.wordInfoTranslation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--lt-color-third-accent-hover);
+  font-size: 26px;
+  font-weight: 200;
+}
+
+.translationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+.btnShowTranslation {
+  width: 50%;
+  padding: 8px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: var(--lt-color-third-accent-hover);
+  background-color: var(--lt-color-first-accent-menu);
+  box-shadow: 0 10px 0 var(--lt-color-third-accent-hover);
+  border: none;
+  border-radius: 20px 130px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnShowTranslation:hover {
+  background-color: var(--lt-color-first-accent-menu);
+  box-shadow: none;
+}
+
+.translationIsShown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 74px;
+  /* margin-top: 10px; */
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 20px 130px;
+  text-transform: uppercase;
+  color: white;
+  background-color: var(--lt-color-third-accent-hover);
+}
+
+.cardPrevArrow {
+  float: left;
+  width: 58px;
+  height: 58px;
+  stroke: var(--lt-color-text);
+  stroke-width: 1px;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.cardPrevArrow:hover {
+  stroke: var(--lt-color-third-accent-hover);
+}
+
+.cardNextArrow {
+  float: right;
+  width: 58px;
+  height: 58px;
+  stroke: var(--lt-color-text);
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.cardNextArrow:hover {
+  stroke: var(--lt-color-third-accent-hover);
+}
+
+.popupAddContainer {
+  display: flex;
+  background-color: var(--lt-color-third-accent-hover);
+  position: fixed;
+  inset: 0;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.addContent {
+  width: 400px;
+  height: 500px;
+  margin: auto;
+  padding: 70px 20px 20px 20px;
+  position: relative;
+  background-color: var(--lt-color-bg);
+  border-radius: 15px;
+}
+
+.addCloseIcon {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 38px;
+  height: 38px;
+  stroke: var(--lt-color-text);
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.addCloseIcon:hover {
+  stroke: var(--lt-color-third-accent-hover);
+}
+
+.addFormContainer {
+  width: 100%;
+  padding: 15px;
+}
+
+.addFormInput,
+.addFormBtnSubmit {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+
+.addFormFields {
+  position: relative;
+  margin-bottom: 44px;
+}
+
+.addFormLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: var(--lt-color-text);
+  transition: 0.3s;
+}
+
+.addFormInput {
+  width: 100%;
+  padding: 5px 0 5px 0;
+  border: none;
+  border-bottom: 3px solid var(--lt-color-first-accent-menu);
+  background-color: transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+.addFormInput:focus {
+  border-bottom: 3px solid var(--lt-color-third-accent-hover);
+}
+
+.addFormBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addFormBtnSubmit {
+  width: 50%;
+  padding: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--lt-color-text);
+  background-color: var(--lt-color-first-accent-menu);
+  box-shadow: 0 10px 0 var(--lt-color-third-accent-hover);
+  border: none;
+  border-radius: 20px 130px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.addFormBtnSubmit:hover {
+  background-color: var(--lt-color-first-accent-menu);
+  box-shadow: none;
+}
+
+.addFormInput:not(:-moz-placeholder-shown) ~ .addFormLabel {
+  top: -18px;
+  font-size: 14px;
+  color: var(--lt-color-text);
+}
+
+.addFormInput:focus ~ .formLabel,
+.addFormInput:not(:placeholder-shown) ~ .addFormLabel {
+  top: -18px;
+  font-size: 14px;
+  color: var(--lt-color-text);
 }
 
 .footer {
@@ -374,7 +622,6 @@ td:nth-child(6) {
   align-items: center;
   font-family: var(--font-family-base);
   font-weight: 400;
-  text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--lt-color-text);
   background-color: var(--lt-color-bg);

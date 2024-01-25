@@ -6,19 +6,31 @@
 // }
 
 
-/* иконки */
+
+
+/* иконки Редактировать/Карандаш и Удалить/Мусорный бак */
 .editIcon, 
-.deleteIcon,
-.saveIcon,
-.cancelIcon {
+.deleteIcon {
     stroke: var(--lt-color-text);
 	stroke-width: 1px;
     cursor: pointer;
 }
 
 .editIcon:hover,
-.deleteIcon:hover,
-.saveIcon:hover,
-.cancelIcon:hover {
+.deleteIcon:hover {
     stroke: var(--lt-color-third-accent-hover);
+}
+
+/* кнопки Сохранить/Save и Отменить изменения/Cancel */
+.cancelBtn,
+.saveBtn {
+    color: var(--lt-color-text);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.cancelBtn:hover,
+.saveBtn:hover {
+    color: var(--lt-color-third-accent-hover);
 }
