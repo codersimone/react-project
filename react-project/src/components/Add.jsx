@@ -3,63 +3,64 @@ import { observer, inject } from 'mobx-react';
 import {ReactComponent as CloseIcon} from '../assets/icons/close_icon.svg';
 
 const Add = ({wordStore}) => {
-    const [isOpen, setIsOpen] = useState(false);
+    // хук useState - состояние pressed/Нажато с начальным состоянием false и функция изменения состояния setPressed 
+    const [pressed, setPressed] = useState(false);
+    const [add, setAdd] = useState();
+
+    // функция изменения состояния кнопки закрытия/иконки Крестик
+    const handleChangeCloseIconState = () => {
+        setPressed(!pressed);
+    };
+
+    // функция изменения состояния инпутов
+    const handleChangeInput = (event) => {
+        setAdd({...add, [event.target.name]: event.target.value});
+    }
+
+    //функция проверки формы на пустые строки (валидация формы / событие submit) при отправке/после клика на кнопку
+    const onSubmit = () => {
+        if (
+            add.english !== '' &&
+            add.transcription !== '' &&
+            add.russian !== '' &&
+            add.tags !== '' 
+        ) {
+            wordStore.words.addWord(add);
+            setAdd();
+            // setPressed(false);
+        }
+    }
+    
     return (
         <div className='popupAddContainer' >
             <div className='addContent'>
-                <CloseIcon onClick={setIsOpen} className='addCloseIcon' alt='Close picture' />
+                <CloseIcon onClick={handleChangeCloseIconState} className='addCloseIcon' alt='Close picture' />
                 
                 <form className='addFormContainer'>
                     <div className='addFormFields'>
-                        <input className='addFormInput' id='engWord' type='text' name='english' placeholder='' required />
+                        <input className='addFormInput' id='engWord' type='text' name='english' onChange={handleChangeInput} placeholder='' required />
                         <label className='addFormLabel' htmlFor='engWord'>Введите новое слово</label>
                     </div>
 
                     <div className='addFormFields'>
-                        <input className='addFormInput' id='wordTranscription' type='text' name='transcription' placeholder='' required />
+                        <input className='addFormInput' id='wordTranscription' type='text' name='transcription' onChange={handleChangeInput} placeholder='' required />
                         <label className='addFormLabel' htmlFor='wordTranscription'>Введите транскрипцию</label>
                     </div>
 
                     <div className='addFormFields'>
-                        <input className='addFormInput' id='rusTranslation' type='text' name='russian' placeholder='' required />
+                        <input className='addFormInput' id='rusTranslation' type='text' name='russian' onChange={handleChangeInput} placeholder='' required />
                         <label className='addFormLabel' htmlFor='rusTranslation'>Введите перевод</label>
                     </div>
 
                     <div className='addFormFields'>
-                        <input className='addFormInput' id='wordTag' type='text' name='tags' placeholder='' required />
+                        <input className='addFormInput' id='wordTag' type='text' name='tags' onChange={handleChangeInput} placeholder='' required />
                         <label className='addFormLabel' htmlFor='wordTag'>Введите подходящий тег</label>
                     </div>
 
                     <div className='addFormBtnContainer'>
-                        <button className='addFormBtnSubmit' type='submit'>save</button>
+                        <button className='addFormBtnSubmit' type='submit' onClick={onSubmit}>save</button>
                     </div>
                 </form>
-
-                {/* <form className='addFormContainer'>
-                    <div className='addFormFields'>
-                        <input className='addFormInput' id='engWord' type='text' name='english' value={add.english || ''} onChange={handleAdd} placeholder='' required />
-                        <label className='addFormLabel' htmlFor='engWord'>Введите новое слово</label>
-                    </div>
-
-                    <div className='addFormFields'>
-                        <input className='addFormInput' id='wordTranscription' type='text' name='transcription' value={add.transcription || ''} onChange={handleAdd} placeholder='' required />
-                        <label className='addFormLabel' htmlFor='wordTranscription'>Введите транскрипцию</label>
-                    </div>
-
-                    <div className='addFormFields'>
-                        <input className='addFormInput' id='rusTranslation' type='text' name='russian' value={add.russian || ''} onChange={handleAdd} placeholder='' required />
-                        <label className='addFormLabel' htmlFor='rusTranslation'>Введите перевод</label>
-                    </div>
-
-                    <div className='addFormFields'>
-                        <input className='addFormInput' id='wordTag' type='text' name='tags' value={add.tags || ''} onChange={handleAdd} placeholder='' required />
-                        <label className='addFormLabel' htmlFor='wordTag'>Введите подходящий тег</label>
-                    </div>
-
-                    <div className='addFormBtnContainer'>
-                        <button className='addFormBtnSubmit' type='submit' onClick={onSubmit} disabled={!isFormFilled}>save</button>
-                    </div>
-                </form> */}
             </div>
         </div>
     );

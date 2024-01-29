@@ -117,7 +117,39 @@ export default class WordStore {
         }
     };
 
-    // функция отмены внесенных изменений в инпутах редактируемого слова/сброс нововведенной информации до той, что была до редактирования
-
     // функция добавления нового слова
+    addWord = async (word) => {
+        this.isLoading = true;
+
+        try {
+            const responseToAdd = await fetch(
+                'http://itgirlschool.justmakeit.ru/api/words/add',
+                {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(word),
+                }
+            );
+            if (!responseToAdd.ok) {
+                throw new Error('Error: Network response was not ok');
+            }
+
+            runInAction(() => {
+                // вызов функции loadData для обновления состояния после асинхронной операции
+                this.loadData();
+                this.isLoading = false;
+            });
+        } catch (error) {
+            runInAction(() => {
+                this.error = error;
+                this.isLoading = false;
+            });
+            console.error('Error:', error);
+        }
+    };
+
+    // функция отмены внесенных изменений в инпутах редактируемого слова/сброс нововведенной информации до той, что была до редактирования
 }

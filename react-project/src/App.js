@@ -17,20 +17,18 @@ const App = ({ wordStore }) => {
     }, []);
 
     return (
-        <>
-            <div>
-                <Header />
-                <Routes>
-                    <Route exact path='/' element={<Home />} />
-                    <Route exact path='/game' element={<Card />} />
-                    <Route exact path='/new' element={<Add />} />
-                    <Route exact path='/' element={<SwitchIcon />} />
-                    <Route exact path='/' />
-                    <Route path='*' element={<NotFound />} />
-                </Routes>
-                <Footer />
-            </div>
-        </>
+        <div className='App'>
+            <Header />
+            <Routes>
+                <Route exact path='/' element={<Home />} />
+                <Route exact path='/game' element={<Card />} />
+                <Route exact path='/new' element={<Add />} />
+                <Route exact path='/' element={<SwitchIcon />} />
+                <Route exact path='/' />
+                <Route path='*' element={<NotFound />} />
+            </Routes>
+            <Footer />
+        </div>
     );
 
     // TODO: h2 переделать на вывод картинки 404 Error

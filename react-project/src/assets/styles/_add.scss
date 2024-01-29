@@ -35,7 +35,6 @@
     stroke: var(--lt-color-third-accent-hover);
 }
 
-
 // форма
 .addFormContainer {
     width: 100%;
@@ -58,6 +57,7 @@
     top: 0;
     left: 0;
     z-index: 1;
+    margin-left: 4px;
     color: var(--lt-color-text);
     // время перехода анимации
     transition: 0.3s;
@@ -65,7 +65,7 @@
 
 .addFormInput {
     width: 100%;
-    padding: 5px 0 5px 0;
+    padding: 2px 0 0 0;
     border: none;
     border-bottom: 3px solid var(--lt-color-first-accent-menu);
     background-color: transparent;

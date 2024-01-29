@@ -7,14 +7,14 @@ import {ReactComponent as DeleteIcon} from '../assets/icons/delete_icon.svg';
 import {ReactComponent as EditIcon} from '../assets/icons/edit_icon.svg';
 
 const Row = ({ wordStore, word, isLoaded }) => {
-    // хук useState - состояние isOpen/Открыть с начальным состоянием false и функция изменения состояния setIsOpen 
+    // хук useState - состояние pressed/Нажато с начальным состоянием false и функция изменения состояния setPressed 
     const [pressed, setPressed] = useState(false);
 
     // хук useState - состояние state с начальным состоянием слово (word) и  функция изменения состояния setState
     const [state, setState] = useState(word)
 
     // хук useState - состояние wordFromApi с начальным состоянием - необходимыми полями вывода данных слова из json файла сервера и функция изменения состояния setWordFromApi
-    const [wordFromApi, setWordFromApi] = useState( {
+    const [wordFromApi, setWordFromApi] = useState({
         id: word.id,
         english: word.english,
         transcription: word.transcription,
@@ -30,6 +30,7 @@ const Row = ({ wordStore, word, isLoaded }) => {
     // константа с вызовом функции из стора для удаления слова 
     const onDeleteWord = (id) => {
         wordStore.deleteWord(id);
+        // setPressed(false);
     }
 
     // константа с вызовом функции из стора для редактирвоания слова 
