@@ -1,0 +1,42 @@
+// общий контейнер 
+.error404Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// текст 
+.error404Text {
+    font-size: 34px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.error404Text strong {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+// кнопка 
+.error404Btn {
+    width: 20%;
+    padding: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--lt-color-third-accent-hover);
+    background-color: var(--lt-color-first-accent-menu);
+    box-shadow: 0 10px 0 var(--lt-color-third-accent-hover);
+    border: none;
+    border-radius: 20px 130px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.errorBtn:hover {
+    background-color: var(--lt-color-first-accent-menu);
+    box-shadow: none;
+}

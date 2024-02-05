@@ -1,0 +1,14 @@
+// общий контейнер 
+.downloadingErrorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// текст 
+.downloadingErrorText {
+    font-size: 28px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}

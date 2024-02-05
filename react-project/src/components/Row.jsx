@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { observer, inject } from 'mobx-react';
-// import Btn from './Btn/Btn';
 // import {ReactComponent as CancelIcon} from '../assets/icons/close_icon.svg';
 // import {ReactComponent as SaveIcon} from '../assets/icons/check_icon.svg';
 import {ReactComponent as DeleteIcon} from '../assets/icons/delete_icon.svg';
@@ -48,7 +47,7 @@ const Row = ({ wordStore, word, isLoaded }) => {
         setPressed(false);
     };
 
-    // функция изменения состояния кнопок/иконок на true (противоположное false)
+    // функция изменения состояния кнопки редактирования/иконки Карандаш на true (противоположное false)
     const handleChangeButtonsState = () => {
         setPressed(true);
     };
@@ -70,10 +69,38 @@ const Row = ({ wordStore, word, isLoaded }) => {
         { pressed ?
 // второй вариант отображения: инпуты с данными слов для их редактирования + иконки SaveIcon/Галочка и CancelIcon/Сброс введенных данных 
         (<tr key={word.id} className='tableWordInfo'>
-            <td><input onChange={handleChangeInput} name='english' type='text' value={wordFromApi.english} /></td>
-            <td><input onChange={handleChangeInput} name='transcription' type='text' value={wordFromApi.transcription} /></td>
-            <td><input onChange={handleChangeInput} name='russian' type='text' value={wordFromApi.russian} /></td>
-            <td><input onChange={handleChangeInput} name='tags' type='text' value={wordFromApi.tags} /></td>
+            <td>
+                <input 
+                    onChange={handleChangeInput} 
+                    name='english' 
+                    type='text' 
+                    value={wordFromApi.english} 
+                />
+            </td>
+            <td>
+                <input 
+                    onChange={handleChangeInput} 
+                    name='transcription' 
+                    type='text' 
+                    value={wordFromApi.transcription} 
+                />
+            </td>
+            <td>
+                <input 
+                    onChange={handleChangeInput} 
+                    name='russian' 
+                    type='text' 
+                    value={wordFromApi.russian} 
+                />
+            </td>
+            <td>
+                <input 
+                    onChange={handleChangeInput} 
+                    name='tags' 
+                    type='text' 
+                    value={wordFromApi.tags} 
+                />
+            </td>
             <td>
                 <button onClick={() => onEditWord(word.id)} className='saveBtn'>save</button>
                 {/* <SaveIcon onClick={() => onEditWord(word.id)} className='saveIcon' alt='Save icon' /> */}

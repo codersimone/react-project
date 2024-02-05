@@ -1,16 +1,14 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import {ReactComponent as CloseIcon} from '../assets/icons/close_icon.svg';
 
 const Add = ({wordStore}) => {
     // хук useState - состояние pressed/Нажато с начальным состоянием false и функция изменения состояния setPressed 
     const [pressed, setPressed] = useState(false);
-    const [add, setAdd] = useState();
 
-    // функция изменения состояния кнопки закрытия/иконки Крестик
-    const handleChangeCloseIconState = () => {
-        setPressed(!pressed);
-    };
+    // хук useState - состояние добавления новогго слова и функция изменения состояния setAdd 
+    const [add, setAdd] = useState();
 
     // функция изменения состояния инпутов
     const handleChangeInput = (event) => {
@@ -30,11 +28,20 @@ const Add = ({wordStore}) => {
             // setPressed(false);
         }
     }
+
+    // хук useNavigate/навигация/сопоставление путей страниц/компонентов приложения
+    const navigate = useNavigate();
+
+    // функция для клика по кнопке возврата на главную страницу 
+    function callBack() {
+        navigate('/');
+    }
     
     return (
         <div className='popupAddContainer' >
             <div className='addContent'>
-                <CloseIcon onClick={handleChangeCloseIconState} className='addCloseIcon' alt='Close picture' />
+
+                <CloseIcon onClick={callBack} className='addCloseIcon' alt='Close picture' />
                 
                 <form className='addFormContainer'>
                     <div className='addFormFields'>
@@ -58,7 +65,9 @@ const Add = ({wordStore}) => {
                     </div>
 
                     <div className='addFormBtnContainer'>
-                        <button className='addFormBtnSubmit' type='submit' onClick={onSubmit}>save</button>
+                    <button className='addFormBtnSubmit' type='submit' onClick={onSubmit}>save</button>
+                        {/* изначальное состояние кнопки Заблокированно для нажатия - disabled  */}
+                        {/* ...onClick={onSubmit} disabled>.... */}
                     </div>
                 </form>
             </div>

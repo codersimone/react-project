@@ -4,11 +4,12 @@ import { ReactComponent as SwitchIcon } from '../assets/icons/sun_moon_icon.svg'
 // import {ReactComponent as MenuIcon} from '../assets/icons/burger_menu_navigation_icon.svg';
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState();
+    // const [isOpen, setIsOpen] = useState();
     return (
         <header className='header'>
             <NavLink className='headerLogo' to='/'><p><strong>english words</strong> by cards</p></NavLink>
-            <nav className={`headerNav ${isOpen ? 'active' : ''}`}>
+            {/* <nav className={`headerNav ${isOpen ? 'active' : ''}`}> */}
+            <nav className='headerNav'>
                 <div className='headerNavList'>
                     <NavLink className='headerNavItem' to='/game'>card game</NavLink>
                     <NavLink className='headerNavItem' to='/new'>add word</NavLink>

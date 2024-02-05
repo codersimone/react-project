@@ -182,7 +182,6 @@ body {
   --white-shade: #feffff;
   --success: #7dbd6d;
   --error: #a41b1b;
-  /* светлая тема */
   --lt-color-bg: var(--bright-green);
   --lt-color-text: var(--white-shade);
   --lt-color-first-accent-menu: var(--deep-green);
@@ -190,13 +189,12 @@ body {
   --lt-color-third-accent-hover: var(--dark-gray);
   --lt-color-success: var(--success);
   --lt-color-error: var(--error);
-  /* темная тема */
   --dt-color-bg: var(--gray-green);
   --dt-color-text: var(--light-green);
   --box-shadow-first: 0 0 4px 4px rgba(0, 0, 0, 0.25);
   --box-shadow-second: 12 12 2px 2px rgb(0 0 0 / 0.25);
   --font-family-base: "Raleway", sans-serif;
-  --font-size-base: 16px;
+  --font-size-base: 1em;
 }
 
 body {
@@ -212,8 +210,8 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 120px;
-  height: 70px;
+  padding: 0 8%;
+  height: 6%;
   background-color: var(--lt-color-bg);
   box-shadow: var(--box-shadow-first);
   color: var(--lt-color-text);
@@ -222,7 +220,7 @@ body {
 }
 
 .headerLogo {
-  font-size: 20px;
+  font-size: 12em;
   line-height: 1;
   font-weight: 700px;
   color: var(--lt-color-text);
@@ -275,6 +273,29 @@ body {
   margin-left: 60px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    padding: 0 50px;
+    height: 40px;
+  }
+  .headerLogo {
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 700px;
+    color: var(--lt-color-text);
+    padding-right: 30px;
+    font-size: 26px;
+    font-weight: 100;
+    color: var(--lt-color-text);
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+  }
+  .headerLogo strong {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
 /* общий контейнер */
 .home {
   display: flex;
@@ -626,4 +647,10 @@ td:nth-child(6) {
   letter-spacing: 1px;
   color: var(--lt-color-text);
   background-color: var(--lt-color-bg);
+}
+
+@media screen and (max-width: 1023px) {
+  .footer {
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */

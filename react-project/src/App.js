@@ -1,24 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Route, Routes } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Card from './components/Card';
 import Add from './components/Add';
 import { ReactComponent as SwitchIcon } from './assets/icons/sun_moon_icon.svg';
+import NotFound from './components/NotFound';
+import DownloadingFromApi from './components/DownloadingFromApi';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import './assets/styles/styles.scss';
 
 const App = ({ wordStore }) => {
+    //хук theme с начальным состоянием класс 'light' и методом setTheme, позволяющим менять это состояние при помощи событий onClick() с функцией изменения класса на 'dark'/стили темной темы приложения
+    const [theme, setTheme] = useState('light');
+
     // вызов хука useEffect загрузит данные с сервера один раз (второй аргумент - []) по функции loadData из wordStore
     useEffect(() => {
         wordStore.loadData();
     }, []);
 
+    //toggleTheme (меняющая начальное состояние хука theme на противопожное/класс 'light' или 'dark' при условии точного совпадения одного из параметров условного/тернарного оператора)
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
+
     return (
-        <div className='App'>
-            <Header />
+        <div className='app' theme={theme}>
+            <Header theme={theme} toggleTheme={toggleTheme} />
             <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/game' element={<Card />} />
@@ -27,23 +36,10 @@ const App = ({ wordStore }) => {
                 <Route exact path='/' />
                 <Route path='*' element={<NotFound />} />
             </Routes>
+            <DownloadingFromApi />
             <Footer />
         </div>
     );
-
-    // TODO: h2 переделать на вывод картинки 404 Error
-    function NotFound() {
-        const navigate = useNavigate();
-        function callBack() {
-            navigate('/');
-        }
-        return (
-            <>
-                <h2>Страница не найдена</h2>
-                <button onClick={callBack}>Вернуться на главную станицу</button>
-            </>
-        );
-    }
 };
 
 export default inject(['wordStore'])(observer(App));
